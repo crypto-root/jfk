@@ -186,9 +186,14 @@ function Home() {
             Unlocking the Truth Through Blockchain Technology
           </p>
           <div className="flex justify-center gap-6">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-all">
+          <a
+              href="https://pump.fun/coin/57DvQvh4MZJMXQbtptRDfuzdDwuZLytdUD4fxXekpump"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-full transition-all"
+            >
               Buy KENNEDY
-            </button>
+            </a>
             <Link 
               to="/whitepaper"
               className="border-2 border-yellow-500 hover:bg-yellow-500/10 text-yellow-500 font-bold py-3 px-8 rounded-full transition-all"
