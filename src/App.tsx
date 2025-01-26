@@ -170,7 +170,7 @@ function Home() {
       <div 
         className="relative h-screen flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/src/kennedy.jpg)',
+          backgroundImage: new URL('./kennedy.jpg', import.meta.url).href,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
