@@ -95,7 +95,7 @@ function Home() {
       id: '1',
       title: 'Warren Commission Classified Appendix',
       type: 'document',
-      thumbnail: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/warren.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Unreleased appendices containing witness testimonies and forensic analyses previously withheld from public view.'
     },
@@ -103,7 +103,7 @@ function Home() {
       id: '2',
       title: 'Dealey Plaza Surveillance Footage',
       type: 'video',
-      thumbnail: 'https://images.unsplash.com/photo-1577496549804-8c8321505395?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/dealey.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Recently discovered surveillance footage from previously unknown cameras in Dealey Plaza on November 22, 1963.'
     },
@@ -111,7 +111,7 @@ function Home() {
       id: '3',
       title: 'CIA Internal Memos (1963-1964)',
       type: 'document',
-      thumbnail: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/cia.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Internal communications and classified memos regarding the investigation and its findings.'
     },
@@ -119,7 +119,7 @@ function Home() {
       id: '4',
       title: 'Secret Service Radio Transmissions',
       type: 'video',
-      thumbnail: 'https://images.unsplash.com/photo-1596265371388-43edbaadab94?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/radio.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Complete audio recordings of Secret Service radio channels during and after the events.'
     },
@@ -127,7 +127,7 @@ function Home() {
       id: '5',
       title: 'Autopsy Report - Complete Version',
       type: 'document',
-      thumbnail: 'https://images.unsplash.com/photo-1585828922344-85c9daa264b0?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/autopsy.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Unredacted autopsy findings including previously classified medical examiner notes and photographs.'
     },
@@ -143,7 +143,7 @@ function Home() {
       id: '7',
       title: 'FBI Surveillance Reports',
       type: 'document',
-      thumbnail: 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/fbi.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Detailed FBI surveillance reports on key persons of interest in the weeks leading up to the assassination.'
     },
@@ -151,7 +151,7 @@ function Home() {
       id: '8',
       title: 'Air Force One Communications',
       type: 'video',
-      thumbnail: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=400',
+      thumbnail: new URL('./assets/afo.jpg', import.meta.url).href,
       status: 'upcoming',
       description: 'Complete audio recordings from Air Force One during the flight from Dallas to Washington D.C.'
     },
