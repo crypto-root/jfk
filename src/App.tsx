@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FileText, PlayCircle, ExternalLink, Lock, Timer, X, Check } from 'lucide-react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Whitepaper from './pages/Whitepaper';
+import kennedy from '/src/assets/kennedy.jpg';
+
 // Document/Video type definition
 interface Resource {
   id: string;
@@ -170,7 +172,7 @@ function Home() {
       <div 
         className="relative h-screen flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/src/kennedy.jpg)',
+          backgroundImage: 'url(/src/assets/kennedy.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
