@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FileText, PlayCircle, ExternalLink, Lock, Timer, X, Check } from 'lucide-react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Whitepaper from './pages/Whitepaper';
-
 // Document/Video type definition
 interface Resource {
   id: string;
@@ -12,29 +11,31 @@ interface Resource {
   status: 'upcoming' | 'available';
   description?: string;
 }
-
 interface NotifyModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
 }
-
 function NotifyModal({ isOpen, onClose, title }: NotifyModalProps) {
   const [wallet, setWallet] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const [error, setError] = useState('');
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Validate that the wallet address is at least 26 characters long.
+    if (wallet.length < 26) {
+      setError('Please enter a valid Solana wallet address (at least 26 characters).');
+      return;
+    }
     setIsSubmitted(true);
+    setError('');
     setTimeout(() => {
       onClose();
       setIsSubmitted(false);
       setWallet('');
     }, 2000);
   };
-
   if (!isOpen) return null;
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4 relative">
@@ -62,6 +63,9 @@ function NotifyModal({ isOpen, onClose, title }: NotifyModalProps) {
                   placeholder="0x..."
                   required
                 />
+                {error && (
+                  <p className="text-red-400 mt-2">{error}</p>
+                )}
               </div>
               <button
                 type="submit"
@@ -84,10 +88,8 @@ function NotifyModal({ isOpen, onClose, title }: NotifyModalProps) {
     </div>
   );
 }
-
 function Home() {
   const [notifyModal, setNotifyModal] = useState({ isOpen: false, title: '' });
-
   const resources: Resource[] = [
     {
       id: '1',
@@ -162,7 +164,6 @@ function Home() {
       description: 'Original medical records and staff testimonies from Parkland Memorial Hospital on November 22, 1963.'
     }
   ];
-
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Hero Section */}
@@ -195,7 +196,6 @@ function Home() {
           </div>
         </div>
       </div>
-
       {/* Declassified Content Section */}
       <div className="max-w-7xl mx-auto px-4 py-24">
         <h2 className="text-4xl font-bold mb-12 text-center">
@@ -258,7 +258,6 @@ function Home() {
           ))}
         </div>
       </div>
-
       {/* Footer */}
       <footer className="bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 py-12">
@@ -298,7 +297,6 @@ function Home() {
           </div>
         </div>
       </footer>
-
       <NotifyModal 
         isOpen={notifyModal.isOpen}
         onClose={() => setNotifyModal({ isOpen: false, title: '' })}
@@ -307,7 +305,6 @@ function Home() {
     </div>
   );
 }
-
 function App() {
   return (
     <Router>
@@ -318,5 +315,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
